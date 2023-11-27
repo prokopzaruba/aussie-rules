@@ -1,0 +1,414 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.App {
+  text-align: center;
+  overflow: auto;
+}
+
+html {
+  font-size: 62.5%;
+  /* background-color: #f2f1f6; */
+  background-attachment: fixed;
+  background-image: linear-gradient(to bottom right, #009fff, #ec2f4b);
+
+  height: 100%;
+}
+
+@media (max-width: 84em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+.container {
+  width: 96rem;
+  margin: 6.4rem auto;
+  display: flex;
+  gap: 3.2rem;
+}
+
+@media (max-width: 50em) {
+  .container {
+    flex-direction: column;
+    width: 56rem;
+  }
+  .games,
+  .match-nav,
+  .match {
+    margin: 0 auto;
+    width: 36rem;
+  }
+}
+
+@media (max-width: 34em) {
+  html {
+    font-size: 43.75%;
+  }
+}
+
+/* table classes */
+
+.standings {
+  width: 56rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 6rem;
+}
+
+.standings-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: linear-gradient(to bottom right, white, #cfdef3);
+  border-radius: 2rem;
+  box-shadow: 0 0 12px #bababa;
+}
+
+thead {
+  height: 4.2rem;
+  border-bottom: 2px solid black;
+}
+
+tr {
+  padding: 2rem;
+}
+
+thead th {
+  padding: 0.8rem;
+}
+
+tbody td {
+  padding: 0.8rem;
+}
+
+tbody {
+}
+
+tbody tr {
+  border-bottom: 10px none rgba(0, 0, 0, 0);
+  border-spacing: 0 15px;
+}
+
+tbody tr {
+  border-bottom: 1px solid rgb(76, 123, 197, 0.5);
+}
+
+tbody tr:last-child {
+  border: none;
+}
+
+.th-l {
+  border-top-left-radius: 2rem;
+}
+
+.th-r {
+  border-top-right-radius: 2rem;
+}
+
+.td-last-r {
+  font-weight: 700;
+}
+
+.table-logo {
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-right: 0.8rem;
+  vertical-align: middle;
+}
+
+.team-button {
+  font-size: 1.4rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.team-heading {
+  text-align: left;
+}
+
+/* nav classes */
+
+.back-button {
+  background: linear-gradient(#f6f6f6, white);
+  padding: 0.6rem 2.4rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 20rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  width: 24rem;
+  color: black;
+  box-shadow: 0 0 12px #bababa;
+  transition: box-shadow 0.1s;
+}
+
+.round-text {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.match-nav {
+  height: 3.6rem;
+  width: 36rem;
+  font-family: Arial, sans-serif;
+  margin-bottom: 2.4rem;
+}
+
+.round-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.round-button {
+  background: linear-gradient(#f6f6f6, white);
+  border: none;
+  cursor: pointer;
+  border-radius: 20rem;
+  font-size: 3rem;
+  font-weight: 400;
+  width: 3.6rem;
+  color: #007bff;
+  box-shadow: 0 0 12px #e5e5e5;
+}
+
+.minus {
+  font-weight: 500;
+}
+
+.button-hovered {
+  box-shadow: 0 0 18px white;
+}
+
+/* matches classes */
+
+.matches-teams {
+  width: 22.4rem;
+}
+
+.games {
+  margin-bottom: 12rem;
+}
+
+.matches-team {
+  text-align: left;
+  padding-left: 2.2rem;
+}
+
+.matches-score {
+  padding-right: 1.6rem;
+  text-align: right;
+  margin-left: auto;
+}
+
+.matches-live {
+  color: red;
+  margin-top: -0.4rem;
+}
+
+.game {
+  font-size: 1.4rem;
+  width: 36rem;
+  background: linear-gradient(to bottom right, white, #cfdef3);
+  border-radius: 2rem;
+  padding: 1.2rem 1.2rem;
+  margin-bottom: 1.4rem;
+  box-shadow: 0 0 18px #bababa;
+  transition: box-shadow 0.1s;
+  cursor: pointer;
+  height: 7rem;
+}
+
+.game-hovered {
+  box-shadow: 0 0 24px white;
+}
+
+.matches-logo {
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+}
+
+.teams-time {
+  display: flex;
+  justify-content: center;
+}
+
+.team {
+  flex: 2;
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-shadow: 0 0 1px #c1c1c1;
+}
+
+.team-one {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.team-two {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.matches-date-time {
+  flex: 1.2;
+  align-self: flex-end;
+  margin-top: 1rem;
+}
+
+.ateamtext {
+  text-align: left;
+}
+
+.hteamtext {
+  text-align: right;
+}
+
+.matches-time {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.matches-date {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #595959;
+}
+
+/* match classes */
+
+.match {
+  font-size: 1.4rem;
+  padding-top: 3.2rem;
+  width: 36rem;
+  background: linear-gradient(to bottom right, white, #cfdef3);
+  border-radius: 2rem;
+  box-shadow: 0 0 12px #bababa;
+}
+
+.match-main {
+  display: flex;
+  justify-content: center;
+}
+
+.match-logo-team {
+  flex: 1;
+}
+
+.match-middle {
+  flex: 0.8;
+}
+
+.match-logo {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  margin: 0 auto;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0 0 6px #b2b2b2);
+  filter: drop-shadow(0 0 6px #b2b2b2);
+  margin-bottom: 1.4rem;
+}
+
+.match-logo-hovered {
+  -webkit-filter: drop-shadow(0 0 10px #605f60);
+  filter: drop-shadow(0 0 10px #605f60);
+}
+
+.match-team {
+  margin: 0 auto;
+  margin-bottom: 2.2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 12rem;
+}
+
+.match-team-future {
+  margin-bottom: 2.8rem;
+}
+
+.match-date {
+  font-size: 1.4rem;
+  margin-top: 0.2rem;
+  margin-bottom: 1.6rem;
+  font-weight: 500;
+  color: #606060;
+}
+
+.stats {
+  padding-bottom: 2.4rem;
+}
+
+.stats-heading {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.stat-number-l {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-number-r {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-description {
+  flex: 0.6;
+  font-size: 1.4rem;
+  color: #606060;
+}
+
+.live {
+  color: red;
+  font-size: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.match-score {
+  font-size: 2.4rem;
+  margin-bottom: 1.4rem;
+  font-weight: 500;
+}
+
+.match-time {
+  font-size: 2.2rem;
+  margin-bottom: 1.4rem;
+}
+
+.loading {
+  margin-top: 1.2rem;
+  font-size: 1.8rem;
+  color: white;
+}
